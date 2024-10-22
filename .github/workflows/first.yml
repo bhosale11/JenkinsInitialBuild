@@ -1,0 +1,22 @@
+name: First CI Workflow
+on: 
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  first-job:
+    name: Init
+    runs-on: windows-latest
+    steps:
+      - name: Initialization
+        run: echo "Hellow World"
+      - name: Middle
+        run: echo "Continuous Testing"
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - name: End
+        run: echo "Thank you"
+      
